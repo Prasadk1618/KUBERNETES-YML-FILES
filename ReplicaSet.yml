@@ -1,0 +1,19 @@
+apiVersion: app/v1
+kind: ReplicaSet
+metadata:
+     name: myrc
+spec:
+   replicas: 3
+   selector:
+        matchLables:
+          env: dev
+   template:
+          metadata:
+                labels:
+                     env: dev
+          spec:
+              containers:
+                     - name: nginxcontaniers
+                       image: nginx
+                       Ports:
+                           contaninersPort: 80
